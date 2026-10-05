@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Viva+ | Programa de Fidelidade</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+  <!-- ============================
+       HEADER
+       ============================ -->
+
+  <header class="header">
+
+    <div class="logo">
+      Viva<span>+</span>
+    </div>
+
+
+    <nav>
+
+      <a href="#inicio">
+        Início
+      </a>
+
+      <a href="#pontos">
+        Meus pontos
+      </a>
+
+      <a href="#catalogo">
+        Catálogo
+      </a>
+
+      <a href="#carrinho">
+        Carrinho
+      </a>
+
+    </nav>
+
+
+    <div class="user-area">
+
+      <span>
+        Olá, Gabi
+      </span>
+
+      <div class="avatar">
+        G
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- ============================
+         HERO
+         ============================ -->
+
+    <section
+      class="hero"
+      id="inicio"
+    >
+
+      <div>
+
+        <span class="eyebrow">
+          PROGRAMA VIVA+
+        </span>
+
+
+        <h1>
+          Olá, Gabi! 👋
+        </h1>
+
+
+        <p id="status-message">
+
+          Troque seus pontos por prêmios exclusivos no catálogo Viva+.
+
+        </p>
+
+
+        <div class="status-row">
+
+          <span
+            id="status"
+            class="status active"
+          >
+            ● Ativo
+          </span>
+
+
+          <span class="tier">
+            Nível Ouro
+          </span>
+
+        </div>
+
+
+        <button
+          class="primary-button"
+          onclick="irParaCatalogo()"
+        >
+
+          Ver catálogo
+
+        </button>
+
+      </div>
+
+
+      <div class="hero-card">
+
+        <span>
+          Saldo disponível
+        </span>
+
+        <strong id="saldo">
+          1.250
+        </strong>
+
+        <small>
+          pontos resgatáveis
+        </small>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ============================
+         PONTOS
+         ============================ -->
+
+    <section
+      class="section"
+      id="pontos"
+    >
+
+      <div class="section-title">
+
+        <div>
+
+          <span class="eyebrow">
+            MEUS PONTOS
+          </span>
+
+          <h2>
+            Acompanhe seus pontos
+          </h2>
+
+        </div>
+
+
+        <button
+          id="toggle-status"
+          class="secondary-button"
+          onclick="alternarStatus()"
+        >
+
+          Simular bloqueio
+
+        </button>
+
+      </div>
+
+
+      <div class="points-grid">
+
+
+        <div class="point-card highlight">
+
+          <span>
+            Pontos resgatáveis
+          </span>
+
+          <strong id="saldo-card">
+            1.250
+          </strong>
+
+          <small>
+            Disponíveis para troca por prêmios
+          </small>
+
+        </div>
+
+
+
+        <div class="point-card">
+
+          <span>
+            Pontos qualificáveis
+          </span>
+
+          <strong>
+            5.400
+          </strong>
+
+          <small>
+            Considerados para evolução de nível
+          </small>
+
+        </div>
+
+
+
+        <div class="point-card">
+
+          <span>
+            Próxima expiração
+          </span>
+
+          <strong>
+            400
+          </strong>
+
+          <small>
+            Expiram em 10/10/2026
+          </small>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- ============================
+           LOTES
+           ============================ -->
+
+      <div class="lots-container">
+
+        <div class="subsection-title">
+
+          <h3>
+            Detalhamento dos pontos
+          </h3>
+
+          <p>
+            Os pontos mais antigos são consumidos primeiro.
+          </p>
+
+        </div>
+
+
+        <div class="lots-grid">
+
+
+          <div class="lot-card">
+
+            <div class="lot-icon">
+              01
+            </div>
+
+
+            <div class="lot-content">
+
+              <strong>
+                Lote 001 — Crédito antigo
+              </strong>
+
+              <span>
+                Crédito em 10/10/2025
+              </span>
+
+              <span>
+                Expira em 10/10/2026
+              </span>
+
+            </div>
+
+
+            <strong class="lot-points">
+
+              <span id="lote-antigo">
+                400
+              </span>
+
+              pts
+
+            </strong>
+
+          </div>
+
+
+
+          <div class="lot-card">
+
+            <div class="lot-icon">
+              02
+            </div>
+
+
+            <div class="lot-content">
+
+              <strong>
+                Lote 002 — Crédito recente
+              </strong>
+
+              <span>
+                Crédito em 20/09/2026
+              </span>
+
+              <span>
+                Expira em 20/09/2027
+              </span>
+
+            </div>
+
+
+            <strong class="lot-points">
+
+              <span id="lote-recente">
+                850
+              </span>
+
+              pts
+
+            </strong>
+
+          </div>
+
+
+
+          <div class="lot-card expired">
+
+            <div class="lot-icon">
+              03
+            </div>
+
+
+            <div class="lot-content">
+
+              <strong>
+                Lote 003 — Crédito expirado
+              </strong>
+
+              <span>
+                Crédito em 30/09/2025
+              </span>
+
+              <span>
+                Expirou em 30/09/2026
+              </span>
+
+            </div>
+
+
+            <strong class="lot-points">
+              300 pts
+            </strong>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="info-box">
+
+          <strong>
+            ℹ️ Sobre a validade
+          </strong>
+
+          <span>
+            Pontos expirados não fazem parte do saldo disponível para resgate.
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ============================
+         CATÁLOGO
+         ============================ -->
+
+    <section
+      class="section catalog-section"
+      id="catalogo"
+    >
+
+      <div class="section-title">
+
+        <div>
+
+          <span class="eyebrow">
+            CATÁLOGO
+          </span>
+
+          <h2>
+            Escolha seu prêmio
+          </h2>
+
+          <p>
+            Troque seus pontos por experiências e produtos.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="catalog-grid">
+
+
+        <!-- ============================
+             FONE
+             ============================ -->
+
+        <article class="product-card">
+
+          <div class="product-image purple">
+            🎧
+          </div>
+
+
+          <div class="product-content">
+
+            <span class="product-category">
+              Tecnologia
+            </span>
+
+            <h3>
+              Fone Bluetooth
+            </h3>
+
+            <p>
+              Fone sem fio com conexão Bluetooth.
+            </p>
+
+
+            <div class="product-footer">
+
+              <strong>
+
+                500
+                <small>
+                  pts
+                </small>
+
+              </strong>
+
+
+              <button
+                class="resgate-button"
+                onclick="adicionarAoCarrinho('Fone Bluetooth', 500)"
+              >
+
+                Adicionar ao carrinho
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ============================
+             KIT CAFÉ
+             ============================ -->
+
+        <article class="product-card">
+
+          <div class="product-image lilac">
+            ☕
+          </div>
+
+
+          <div class="product-content">
+
+            <span class="product-category">
+              Casa
+            </span>
+
+            <h3>
+              Kit Café
+            </h3>
+
+            <p>
+              Kit especial para os momentos de café.
+            </p>
+
+
+            <div class="product-footer">
+
+              <strong>
+
+                800
+                <small>
+                  pts
+                </small>
+
+              </strong>
+
+
+              <button
+                class="resgate-button"
+                onclick="adicionarAoCarrinho('Kit Café', 800)"
+              >
+
+                Adicionar ao carrinho
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ============================
+             MOCHILA
+             ============================ -->
+
+        <article class="product-card unavailable">
+
+          <div class="product-image blue">
+            🎒
+          </div>
+
+
+          <div class="product-content">
+
+            <span class="product-category">
+              Lifestyle
+            </span>
+
+            <h3>
+              Mochila Premium
+            </h3>
+
+            <p>
+              Mochila premium para o dia a dia.
+            </p>
+
+
+            <div class="product-footer">
+
+              <strong>
+
+                1.500
+                <small>
+                  pts
+                </small>
+
+              </strong>
+
+
+              <button
+                class="resgate-button"
+                disabled
+              >
+
+                Indisponível
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ============================
+             VALE PRESENTE
+             ============================ -->
+
+        <article class="product-card">
+
+          <div class="product-image pink">
+            🎁
+          </div>
+
+
+          <div class="product-content">
+
+            <span class="product-category">
+              Experiência
+            </span>
+
+            <h3>
+              Vale Presente
+            </h3>
+
+            <p>
+              Exemplo de prêmio abaixo do mínimo permitido.
+            </p>
+
+
+            <div class="product-footer">
+
+              <strong>
+
+                300
+                <small>
+                  pts
+                </small>
+
+              </strong>
+
+
+              <button
+                class="resgate-button"
+                onclick="adicionarAoCarrinho('Vale Presente', 300)"
+              >
+
+                Adicionar ao carrinho
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ============================
+         CARRINHO
+         ============================ -->
+
+    <section
+      class="section"
+      id="carrinho"
+    >
+
+      <div class="section-title">
+
+        <div>
+
+          <span class="eyebrow">
+            CARRINHO
+          </span>
+
+          <h2>
+            Seu resgate
+          </h2>
+
+          <p>
+            Combine prêmios para atingir o mínimo de 500 pontos.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- CARRINHO VAZIO -->
+
+      <div
+        id="carrinho-vazio"
+        class="info-box"
+      >
+
+        <strong>
+          🛒 Carrinho vazio
+        </strong>
+
+        <span>
+          Adicione um ou mais prêmios do catálogo.
+        </span>
+
+      </div>
+
+
+      <!-- CARRINHO COM ITENS -->
+
+      <div
+        id="carrinho-conteudo"
+        style="display:none; margin-top:20px;"
+      >
+
+        <div id="carrinho-itens">
+        </div>
+
+
+        <div
+          style="
+            margin-top:20px;
+            padding:20px;
+            border-radius:16px;
+            background:#f5f0ff;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:20px;
+            flex-wrap:wrap;
+          "
+        >
+
+          <div>
+
+            <span
+              style="
+                display:block;
+                font-size:14px;
+              "
+            >
+              Total do carrinho
+            </span>
+
+
+            <strong
+              id="carrinho-total"
+              style="
+                font-size:28px;
+              "
+            >
+              0 pts
+            </strong>
+
+          </div>
+
+
+          <button
+            class="primary-button"
+            onclick="finalizarResgate()"
+          >
+
+            Finalizar resgate
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ============================
+         QA LAB
+         ============================ -->
+
+    <section class="qa-section">
+
+      <div class="qa-header">
+
+        <div>
+
+          <span class="eyebrow">
+            QA LAB
+          </span>
+
+          <h2>
+            Simulações de teste
+          </h2>
+
+          <p>
+            Ambiente fictício criado para demonstrar cenários do case.
+          </p>
+
+        </div>
+
+
+        <span class="qa-badge">
+          LABORATÓRIO
+        </span>
+
+      </div>
+
+
+
+      <div class="qa-grid">
+
+
+        <button
+          onclick="simularSaldoInsuficiente()"
+        >
+
+          💰 Simular saldo insuficiente
+
+        </button>
+
+
+        <button
+          onclick="simularEstoque()"
+        >
+
+          📦 Simular estoque esgotado
+
+        </button>
+
+
+        <button
+          onclick="simularFalhaParceiro()"
+        >
+
+          🔄 Simular falha do parceiro
+
+        </button>
+
+
+        <button
+          onclick="simularFalhaEnvio()"
+        >
+
+          🚨 Simular falha no envio
+
+        </button>
+
+
+        <button
+          onclick="simularSaldoExato()"
+        >
+
+          🎯 Simular saldo exato
+
+        </button>
+
+
+        <button
+          onclick="resetarLaboratorio()"
+        >
+
+          ↩️ Restaurar cenário
+
+        </button>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ============================
+       MODAL
+       ============================ -->
+
+  <div
+    id="modal"
+    class="modal hidden"
+  >
+
+    <div class="modal-box">
+
+
+      <button
+        class="close-button"
+        onclick="fecharModal()"
+      >
+
+        ×
+
+      </button>
+
+
+      <div class="modal-icon">
+        ✓
+      </div>
+
+
+      <h2 id="modal-title">
+        Resgate realizado!
+      </h2>
+
+
+      <p id="modal-message">
+        Seu resgate foi realizado.
+      </p>
+
+
+      <button
+        class="primary-button"
+        onclick="fecharModal()"
+      >
+
+        Fechar
+
+      </button>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ============================
+       FOOTER
+       ============================ -->
+
+  <footer>
+
+    <strong>
+      Viva+
+    </strong>
+
+    <span>
+      Protótipo fictício para laboratório de QA
+    </span>
+
+  </footer>
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
